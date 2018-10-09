@@ -1,4 +1,11 @@
-import { accessToken } from '../accessToken.js';
+import { accessToken } from "../accessToken.js";
+
+let accessToken1 = "";
+if (accessToken) {
+  accessToken1 = accessToken;
+} else {
+  accessToken1 = process.env.accessToken;
+}
 
 const checkResponse = response => {
   if (response.status !== 200) {
@@ -9,7 +16,7 @@ const checkResponse = response => {
 };
 
 export const getGithubNames = url => {
-  return fetch(url + accessToken)
+  return fetch(url + accessToken1)
     .then(checkResponse)
     .catch(err => {
       throw new Error(`fetch getUserData failed ${err}`);
