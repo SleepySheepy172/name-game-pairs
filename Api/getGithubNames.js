@@ -1,4 +1,9 @@
-import { accessToken } from "../accessToken.js";
+// import { accessToken } from "../accessToken.js";
+// let accessToken = "";
+// if (process.env.REACT_APP_TOKEN) {
+//   accessToken = process.env.REACT_APP_TOKEN;
+// }
+const accessToken = process.env.REACT_APP_TOKEN;
 
 const checkResponse = response => {
   if (response.status !== 200) {
